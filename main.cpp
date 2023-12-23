@@ -1,5 +1,4 @@
 #include <SFML/Graphics.hpp>
-//#include "include/Create_shapes.hpp"
 #include "include/Circle.hpp"
 
 int main()
