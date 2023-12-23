@@ -13,3 +13,14 @@ Circle::Circle(float value) {
  //   sf::CircleShape temp {100.0f};
     shape = sf::CircleShape {value};
 }
+
+void Circle::move() {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) 
+   			 shape.setPosition(shape.getPosition().x - 1.f, shape.getPosition().y);	    
+	    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
+   			shape.setPosition(shape.getPosition().x + 1.f, shape.getPosition().y);
+	    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
+   			 shape.setPosition(shape.getPosition().x, shape.getPosition().y-1.f);	       
+	    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
+   			 shape.setPosition(shape.getPosition().x, shape.getPosition().y+1.f);	 
+    }
