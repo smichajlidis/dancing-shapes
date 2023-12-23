@@ -7,10 +7,10 @@
 class Circle: public Figure {
 private:
     sf::CircleShape shape;
-
 public:
     virtual void setShape(float pos_x, float pos_y, sf::Color color) override;
     virtual void draw(sf::RenderWindow& window) const override;
+    virtual void move() override;
     Circle(float);
 };
 
