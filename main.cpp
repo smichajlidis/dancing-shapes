@@ -19,6 +19,7 @@ int main()
         }
 
         window.clear();
+        circle.move();
         circle.draw(window);
         window.display();
     }
