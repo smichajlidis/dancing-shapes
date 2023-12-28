@@ -10,6 +10,14 @@ Circle::Circle(float value, float pos_x, float pos_y, sf::Color color) {
     shape.setFillColor(color);
 }
 
+// Constructor for a triangle
+
+Circle::Circle(float val1, size_t val2, float pos_x, float pos_y, sf::Color color) {
+    shape = sf::CircleShape {val1, val2};
+    shape.setPosition(pos_x, pos_y);
+    shape.setFillColor(color);
+}
+
 void Circle::move() {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) 
    			 shape.setPosition(shape.getPosition().x - 1.f, shape.getPosition().y);	    

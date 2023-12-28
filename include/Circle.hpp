@@ -9,7 +9,8 @@ private:
 public:
     virtual void draw(sf::RenderWindow& window) const override;
     virtual void move() override;
-    Circle(float, float, float, sf::Color);
+    Circle(float, float, float, sf::Color); //constructor for a circle
+    Circle(float, size_t, float, float, sf::Color); //constructor for a triangle
 };
 
 #endif
