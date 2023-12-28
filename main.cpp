@@ -9,6 +9,7 @@ int main()
 
     std::vector<std::unique_ptr<Figure>> figures;
     figures.push_back(std::make_unique<Circle>(100.0f, 25.0f, 150.0f, sf::Color::Green));
+    figures.push_back(std::make_unique<Circle>(100.0f,3.0f,25.0f,150.0f,sf::Color::Red));
 
     std::unique_ptr<Figure>& active = figures.at(0);
 
