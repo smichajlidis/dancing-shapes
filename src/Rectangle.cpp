@@ -20,3 +20,10 @@ void Rectangle::move() {
 	    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
    			 shape.setPosition(shape.getPosition().x, shape.getPosition().y+1.f);	 
     }
+
+void Rectangle::rotate() {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Q)) 
+   			 shape.setRotation(shape.getRotation() - 1);	    
+	    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::E))
+   			shape.setRotation(shape.getRotation() + 1);
+}

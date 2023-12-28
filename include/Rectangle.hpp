@@ -9,6 +9,7 @@ private:
 public:
     virtual void draw(sf::RenderWindow& window) const override;
     virtual void move() override;
+    virtual void rotate() override;
     Rectangle(float, float, float, float, sf::Color);
 };
 
