@@ -26,6 +26,7 @@ public:
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::E))
 			shape->rotate(1.0f);
 	};
+	virtual void changeSize() = 0;
 	Figure(std::unique_ptr<sf::Shape> shape) : shape(std::move(shape)) {};
     virtual ~Figure() {};
 };
