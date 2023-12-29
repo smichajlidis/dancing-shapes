@@ -43,6 +43,7 @@ int main()
         window.clear();
         active->move();
         active->rotate();
+        active->changeSize();
         for (auto& f: figures)
             f->draw(window);
         window.display();
