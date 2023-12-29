@@ -7,6 +7,7 @@
 class Rectangle: public Figure {
 public:
     Rectangle(float, float, sf::Color);
+    virtual void changeSize() override;
 };
 
 #endif
