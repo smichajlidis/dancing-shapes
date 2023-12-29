@@ -21,12 +21,12 @@ public:
    			 shape->setPosition(shape->getPosition().x, shape->getPosition().y+1.f);	
 	};
 	virtual void rotate() {
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Q)) 
-   			 shape->setRotation(shape->getRotation() - 1);	    
-	    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::E))
-   			shape->setRotation(shape->getRotation() + 1);
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Q))
+			shape->rotate(-1.0f);
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::E))
+			shape->rotate(1.0f);
 	};
-	Figure(std::unique_ptr<sf::Shape> shape) : shape(std::move(shape)) {}
+	Figure(std::unique_ptr<sf::Shape> shape) : shape(std::move(shape)) {};
     virtual ~Figure() {};
 };
 
