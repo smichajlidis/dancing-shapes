@@ -6,7 +6,7 @@
 
 class Rectangle: public Figure {
 public:
-    Rectangle(float, float, float, float, sf::Color);
+    Rectangle(float, float, sf::Color);
 };
 
 #endif

@@ -7,8 +7,8 @@
 class Circle: public Figure {
 
 public:
-    Circle(float, float, float, sf::Color); //constructor for a circle
-    Circle(float, size_t, float, float, sf::Color); //constructor for a triangle
+    Circle(float, sf::Color); //constructor for a circle
+    Circle(float, size_t, sf::Color); //constructor for a triangle
 };
 
 #endif
