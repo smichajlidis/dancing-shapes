@@ -1,20 +1,19 @@
 #include <SFML/Graphics.hpp>
 #include "include/Circle.hpp"
 #include "include/Rectangle.hpp"
+#include "include/FigureManager.hpp"
 #include <memory>
 #include <vector>
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(800, 600), "Dancing shapes");
+    FigureManager figures;
 
-    std::vector<std::unique_ptr<Figure>> figures;
-    figures.push_back(std::make_unique<Circle>(100.0f, sf::Color::Green));
-    figures.push_back(std::make_unique<Rectangle>(140.0f, 140.0f, sf::Color::Yellow));
-    figures.push_back(std::make_unique<Circle>(100.0f, 3.0f, sf::Color::Red));
-    figures.push_back(std::make_unique<Circle>(5.0f, sf::Color::Blue));
-
-    int activeFigureIndex {0};
+    figures.addFigure(std::make_shared<Circle>(100.0f, sf::Color::Green));
+    figures.addFigure(std::make_shared<Rectangle>(140.0f, 140.0f, sf::Color::Yellow));
+    figures.addFigure(std::make_shared<Circle>(100.0f, 3.0f, sf::Color::Red));
+    figures.addFigure(std::make_shared<Circle>(5.0f, sf::Color::Blue));
     
     while (window.isOpen())
     {
@@ -24,29 +23,11 @@ int main()
             if (event.type == sf::Event::Closed) {
                 window.close();
             }
-	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::C)) {
-   			    activeFigureIndex = 0;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::R)) {
-   			    activeFigureIndex = 1;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::T)) {
-   			    activeFigureIndex = 2;  
-            }
-	        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) {
-   			    activeFigureIndex = 3;
-            }
+            figures.setActiveFigureIndex();
         }
 
-        std::unique_ptr<Figure>& active = figures.at(activeFigureIndex);
-
-        window.clear();
-        active->move();
-        active->rotate();
-        active->changeSize();
-        for (auto& f: figures)
-            f->draw(window);
-        window.display();
+        figures.update();
+        figures.draw(window);
     }
 
     return 0;
