@@ -33,18 +33,22 @@ void FigureManager::addFigure(std::shared_ptr<Figure> figure, std::string name) 
     figuresNames.push_back(name);
 }
 
-void FigureManager::setActiveFigureName() {
+void FigureManager::setActiveFigureName(sf::RenderWindow& window) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::C)) {
    		activeFigureName = "circle";
+        window.setTitle("Active figure: CIRCLE");
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::R)) {
    		activeFigureName = "rectangle";
+        window.setTitle("Active figure: RECTANGLE");
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::T)) {
    		activeFigureName = "triangle";  
+        window.setTitle("Active figure: TRIANGLE");
     }
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::P)) {
    		activeFigureName = "point";
+        window.setTitle("Active figure: POINT");
     }
 }
 

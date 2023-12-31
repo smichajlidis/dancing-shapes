@@ -14,7 +14,7 @@ class FigureManager {
 public:
     void swapFigures(const sf::Event& event);
     void addFigure(std::shared_ptr<Figure>, std::string);
-    void setActiveFigureName();
+    void setActiveFigureName(sf::RenderWindow& window);
     void update(const sf::Event& event);
     void draw(sf::RenderWindow& window) const;
 
