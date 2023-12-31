@@ -7,7 +7,7 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Dancing shapes");
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Active figure: CIRCLE");
     FigureManager figures;
 
     figures.addFigure(std::make_shared<Circle>(100.0f, sf::Color::Green), "circle");
@@ -25,7 +25,7 @@ int main()
             if (event.type == sf::Event::KeyPressed) {
                 figures.swapFigures(event);
             }
-            figures.setActiveFigureName();
+            figures.setActiveFigureName(window);
         }
         figures.update(event);
         window.clear();
