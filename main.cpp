@@ -10,6 +10,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(800, 600), "Active figure: CIRCLE");
     FigureManager figures;
 
+    // Add different figures to the manager
     figures.addFigure(std::make_shared<Circle>(100.0f, sf::Color::Green), "circle");
     figures.addFigure(std::make_shared<Rectangle>(140.0f, 140.0f, sf::Color::Yellow), "rectangle");
     figures.addFigure(std::make_shared<Circle>(100.0f, 3.0f, sf::Color::Red), "triangle");
@@ -23,10 +24,13 @@ int main()
                 window.close();
             }
             if (event.type == sf::Event::KeyPressed) {
+                // Change the order in which figures are displayed
                 figures.swapFigures(event);
             }
+            // Switch between figures
             figures.setActiveFigureName(window);
         }
+         // Update the state of figures (move, rotate, etc.)
         figures.update(event);
         window.clear();
         figures.draw(window);

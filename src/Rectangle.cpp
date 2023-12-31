@@ -1,6 +1,7 @@
 #include "../include/Rectangle.hpp"
 
 void Rectangle::changeSize() {
+    // Increase the size of the rectangle when 'W' key is pressed
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)) {
         sf::RectangleShape* rectangleShape = dynamic_cast<sf::RectangleShape*>(shape.get());
         if (rectangleShape) {
@@ -9,6 +10,8 @@ void Rectangle::changeSize() {
             rectangleShape->setOrigin(rectangleShape->getSize() / 2.0f);
         }
     }
+
+    // Decrease the size of the rectangle when 'S' key is pressed
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)) {
         sf::RectangleShape* rectangleShape = dynamic_cast<sf::RectangleShape*>(shape.get());
         if (rectangleShape) {
@@ -20,8 +23,9 @@ void Rectangle::changeSize() {
 }
 
 Rectangle::Rectangle(float width, float height, sf::Color color)
-    : Figure(std::make_unique<sf::RectangleShape>(sf::Vector2f(width,height))) {
+    : Figure(std::make_unique<sf::RectangleShape>(sf::Vector2f(width, height))) {
+    // Set the position, fill color, and origin for the rectangle
     shape->setPosition(400, 300);
     shape->setFillColor(color);
-    shape->setOrigin(width/2, height/2);
+    shape->setOrigin(width / 2, height / 2);
 }

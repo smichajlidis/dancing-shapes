@@ -1,6 +1,7 @@
 #include "../include/Circle.hpp"
 
 void Circle::changeSize() {
+    // Increase the size of the circle when 'W' key is pressed
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)) {
         sf::CircleShape* circleShape = dynamic_cast<sf::CircleShape*>(shape.get());
         if (circleShape) {
@@ -10,6 +11,8 @@ void Circle::changeSize() {
             circleShape->setOrigin(currentOrigin + sf::Vector2f(1.0f, 1.0f));
         }
     }
+
+    // Decrease the size of the circle when 'S' key is pressed
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)) {
         sf::CircleShape* circleShape = dynamic_cast<sf::CircleShape*>(shape.get());
         if (circleShape && circleShape->getRadius() > 0) {
@@ -22,19 +25,17 @@ void Circle::changeSize() {
 }
 
 Circle::Circle(float radius, sf::Color color)
-    :    Figure(std::make_unique<sf::CircleShape>(radius)) {
+    : Figure(std::make_unique<sf::CircleShape>(radius)) {
+    // Set the origin, position, and fill color for the circle
     shape->setOrigin(radius, radius);
     shape->setPosition(400, 300);
     shape->setFillColor(color);
-    
 }
 
-// Constructor for a triangle
-
 Circle::Circle(float radius, size_t pointCount, sf::Color color)
-    :   Figure(std::make_unique<sf::CircleShape>(radius, pointCount)) {
+    : Figure(std::make_unique<sf::CircleShape>(radius, pointCount)) {
+    // Set the origin, position, and fill color for the circle (for triangles)
     shape->setOrigin(radius, radius);
     shape->setPosition(400, 300);
     shape->setFillColor(color);
-    
 }
