@@ -47,7 +47,3 @@ This program allows you to manipulate four geometric shapes on the screen using 
 - 'e': Rotate the active figure clockwise.
 - 'd': Move the active figure one layer down.
 - 'u': Move the active figure one layer up.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
