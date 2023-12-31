@@ -8,12 +8,14 @@
 
 class FigureManager {
     std::vector<std::shared_ptr<Figure>> figures;
-    int activeFigureIndex {0};
+    std::vector<std::string> figuresNames;
+    std::string activeFigureName {"circle"};
 
 public:
-    void addFigure(std::shared_ptr<Figure>);
-    void setActiveFigureIndex();
-    void update() const;
+    void swapFigures(const sf::Event& event);
+    void addFigure(std::shared_ptr<Figure>, std::string);
+    void setActiveFigureName();
+    void update(const sf::Event& event);
     void draw(sf::RenderWindow& window) const;
 
     FigureManager();

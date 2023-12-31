@@ -1,29 +1,66 @@
 #include "../include/FigureManager.hpp"
+#include <iostream>
 
-void FigureManager::addFigure(std::shared_ptr<Figure> figure) {
-    figures.push_back(std::move(figure));
+void FigureManager::swapFigures(const sf::Event& event) {
+    
+    size_t count {0};
+    for (std::string s: figuresNames) {
+        if (s == activeFigureName)
+            break;
+        ++count;
+    }
+    std::shared_ptr<Figure> figureBuff = figures.at(count);
+    std::string nameBuff = figuresNames.at(count);
+    figures.erase(figures.begin() + count);
+    figuresNames.erase(figuresNames.begin() + count);
+
+    switch (event.key.code) {
+        case sf::Keyboard::D:
+            if (count < figures.size()) count+=1;
+            break;
+        case sf::Keyboard::A:
+            if (count > 0) count-=1;
+            break;
+        default: break;
+    }
+
+    figures.insert(figures.begin() + count, figureBuff);
+    figuresNames.insert(figuresNames.begin() + count, nameBuff);
 }
 
-void FigureManager::setActiveFigureIndex() {
+void FigureManager::addFigure(std::shared_ptr<Figure> figure, std::string name) {
+    figures.push_back(std::move(figure));
+    figuresNames.push_back(name);
+}
+
+void FigureManager::setActiveFigureName() {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::C)) {
-   		activeFigureIndex = 0;
+   		activeFigureName = "circle";
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::R)) {
-   		activeFigureIndex = 1;
+   		activeFigureName = "rectangle";
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::T)) {
-   		activeFigureIndex = 2;  
+   		activeFigureName = "triangle";  
     }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) {
-   		activeFigureIndex = 3;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::P)) {
+   		activeFigureName = "point";
     }
 }
 
-void FigureManager::update() const {
-    std::shared_ptr<Figure> active = figures.at(activeFigureIndex);
+void FigureManager::update(const sf::Event& event) {
+
+    size_t count {0};
+    for (std::string s: figuresNames) {
+        if (s == activeFigureName) break;
+        ++count;
+    }
+    std::shared_ptr<Figure> active = figures.at(count);
+
     active->move();
-    active->rotate();
     active->changeSize();
+    active->rotate();
+
 }
 
 void FigureManager::draw(sf::RenderWindow& window) const {
