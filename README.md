@@ -21,14 +21,14 @@ This program allows you to manipulate four geometric shapes on the screen using 
 
 ## How to Build and Run
 
-1. Clone the repository: `git clone <repository-url>`
-2. Navigate to the project directory: `cd SFML-Geometry-Manipulation`
+1. Clone the repository: `git clone https://github.com/smichajlidis/dancing-shapes.git`
+2. Navigate to the project directory: `cd dancing-shapes`
 3. Build the project using your preferred build tool (e.g., CMake).
 4. Run the executable.
 
 ## Dependencies
 
-- SFML: Simple and Fast Multimedia Library (version X.X.X)
+- SFML: Simple and Fast Multimedia Library (version 2.6.1)
   - [SFML Download](https://www.sfml-dev.org/download.php)
 
 ## Controls
