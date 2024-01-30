@@ -5,7 +5,9 @@ Delve into my inaugural SFML programming experiment—a modest showcase of my bu
 ## Presentation Video
 
 <div align="center">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/DS0XcaJN4vo?si=-p54s_hnBkfH6oiJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <a href="https://www.youtube.com/watch?v=DS0XcaJN4vo">
+    <img src="https://img.youtube.com/vi/DS0XcaJN4vo/0.jpg" alt="Watch the video" width="480" height="360">
+  </a>
 </div>
 
 ## Features
