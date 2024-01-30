@@ -1,6 +1,14 @@
 # SFML Geometry Manipulation Program
 
-This program allows you to manipulate four geometric shapes on the screen using SFML.
+Delve into my inaugural SFML programming experiment—a modest showcase of my budding coding skills. This project serves as a starting point, an exploration into the capabilities of SFML, and a testament to my initial foray into this library. Experiment with geometric shapes, adjust sizes, and explore rotations—it's a simple yet meaningful introduction to my journey with SFML. Join me in this humble presentation of my first steps in coding with SFML.
+
+## Presentation Video
+
+<div align="center">
+  <a href="https://youtu.be/DS0XcaJN4vo">
+    <img src="https://img.youtube.com/vi/-DS0XcaJN4vo/0.jpg" alt="Watch the video" width="480" height="360">
+  </a>
+</div>
 
 ## Features
 
@@ -21,29 +29,31 @@ This program allows you to manipulate four geometric shapes on the screen using 
 
 ## How to Build and Run
 
-1. Clone the repository: `git clone https://github.com/smichajlidis/dancing-shapes.git`
-2. Navigate to the project directory: `cd dancing-shapes`
-3. Build the project using your preferred build tool (e.g., CMake).
-4. Run the executable.
+1. **Requirements**: Ensure you have SFML installed. You can download it [here](https://www.sfml-dev.org/download.php).
 
-## Dependencies
+2. **Clone the repository:**
+    ```bash
+    git clone https://github.com/smichajlidis/dancing-shapes.git
+    cd dancing-shapes
+    ```
 
-- SFML: Simple and Fast Multimedia Library (version 2.6.1)
-  - [SFML Download](https://www.sfml-dev.org/download.php)
+3. **Build using CMake:**
+    ```bash
+    mkdir build
+    cd build
+    cmake ..
+    ```
 
-## Controls
+4. **Compile the project:**
+    ```bash
+    make
+    ```
 
-- 'c': Switch to a circle.
-- 'r': Switch to a rectangle.
-- 'p': Switch to a point (dot).
-- 't': Switch to a triangle.
+5. **Run the simulator:**
+    ```bash
+    ./dancing-shapes
+    ```
 
-### Manipulating Active Figure:
+## Contributing
 
-- Arrow keys: Move the active figure.
-- 'i': Increase the size of the active figure.
-- 's': Decrease the size of the active figure.
-- 'q': Rotate the active figure counterclockwise.
-- 'e': Rotate the active figure clockwise.
-- 'd': Move the active figure one layer down.
-- 'u': Move the active figure one layer up.
+Contributions are welcome! Feel free to open issues, submit pull requests, or suggest improvements.
